@@ -130,7 +130,6 @@ double initMembership() {
 		}
 
 
-
 	}
 
 	return 0.0;
@@ -168,8 +167,14 @@ int main(int argc, char const *argv[])
 
 	batch = 0;
 
-	PFS(&iters);
+	initMemForV();
 
+	PFS(&iters);
+	printf("IFV1: %lf\n", IFV_PFS());
+
+	sleep(5);
+	
+	
 	do {
 		iters = 0;
 		exec_time = 0;
@@ -180,16 +185,14 @@ int main(int argc, char const *argv[])
 		exec_time += PFS(&iters);
 		ifv = IFV_PFS();
 		db = DB_PFS();
-		silhouette = SHE_PFS();
+		// silhouette = SHE_PFS();
 
 		printf("iters: %d\n", iters);
 		printf("ifv: %lf\n", ifv);
-		printf("db: %lf\n", db);
+		// printf("db: %lf\n", db);
 		output(fileOutput, batch, exec_time, iters, ifv, db);
 		batch++;
 	}while(!feof(f_batch));
-
-	
 	
 
 	return 0;

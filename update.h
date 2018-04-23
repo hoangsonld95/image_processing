@@ -36,10 +36,44 @@ double updateV() {
 	}
 }
 
+double updateV_optimize() {
+
+	int i,j,k;
+	double sum, Q, R;
+
+	for (j = 0; j < C; j++)	{
+
+		for (i = 0; i < D; i++)	{
+			
+			sum = 0.0;
+
+			for (k = 0; k < (N+P); k++)	{				
+				sum += pow((U[k][j]*(2 - W[k][j])), M);
+			}
+
+			Q = 0.0;
+
+			for (k = N; k < (N+P); k++)	{
+				
+				R = pow((U[k][j]*(2 - W[k][j])), M);
+				R = R * X[k][i];
+
+				Q += R; 
+
+			}
+
+			V[j][i] = V[j][i] + Q/sum;
+
+		}
+
+	}
+
+}
+
 double updateU() {
 
 	int i,j,k;
-	double P, sum;
+	double R, sum;
 	double U_old, diffU;
 
 	diffU = 0.0;
@@ -52,14 +86,13 @@ double updateU() {
 
 			for (i = 0; i < C; i++)	{
 				
-				P = 0.0;
+				R = 0.0;
 
-				P = calculateDistance(k,j) / calculateDistance(k,i);
-				P = pow(P, (2/(M-1)));
-				P = (2 - W[k][j])*P;
+				R = calculateDistance(k,j) / calculateDistance(k,i);
+				R = pow(R, (2/(M-1)));
+				R = (2 - W[k][j])*R;
 
-
-				sum += P;					
+				sum += R;					
 
 			}
 

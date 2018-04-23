@@ -42,19 +42,15 @@ double PFS(int *iters) {
 	time_t start, end;
 
 	start = clock();
-	initMemForV();
+	
 
 	do {
 		updateV();
 		diffU = updateU();
 		diffT = updateT();
 		diffW = updateW();
-		printf("diffU: %lf\t", diffU);
-		printf("diffT: %lf\t", diffT);
-		printf("diffW: %lf\t", diffW);
 		diff = diffU + diffT + diffW;
 		(*iters)++;
-		printf("\n");
 
 	} while(!endLoop(iters, diff));
 
@@ -63,4 +59,51 @@ double PFS(int *iters) {
 	// printf("iterations: %d\n", iters);
 	// printf("ifv: %lf\n", IFV_PFS());
 	return ((double)(end - start)/CLOCKS_PER_SEC);
+}
+
+
+double PFS_Optimize(int *iters) {
+
+	double diff, diffU, diffT, diffW;
+	maxIters = 1000;
+	double ifv;
+	time_t start, end;
+
+	start = clock();
+
+	updateV_optimize();
+	diffU = updateU();
+	diffT = updateT();
+	diffW = updateW();
+	printf("*********************\n");
+	printf("diffU: %10.15lf\n", diffU);
+	printf("diffT: %10.15lf\n", diffT);
+	printf("diffW: %10.15lf\n", diffW);
+	diff = diffU + diffT + diffW;
+	printf("*********************\n");
+
+	(*iters)++;
+
+	N = N + P;
+
+	do {
+		// updateV();
+		diffU = updateU();
+		diffT = updateT();
+		diffW = updateW();
+		printf("diffU: %10.15lf\n", diffU);
+		printf("diffT: %10.15lf\n", diffT);
+		printf("diffW: %10.15lf\n", diffW);
+		diff = diffU + diffT + diffW;
+		(*iters)++;
+		printf("\n");
+	
+	} while(!endLoop(iters, diff));
+
+	end = clock();
+
+	printf("/////////////////\n");
+
+	return ((double)(end-start)/CLOCKS_PER_SEC);
+
 }

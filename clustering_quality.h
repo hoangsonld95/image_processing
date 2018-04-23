@@ -15,13 +15,11 @@ double SDmax() {
 				subtract_V += pow(V[j][k] - V[i][k], 2); 			
 			}
 
-			// printf("%lf\n", subtract_V);
-
 			if(subtract_V >= max) max = subtract_V;
 		}
 	}
 
-	return max;
+	return sqrt(max);
 
 }
 
@@ -38,9 +36,10 @@ double sigmaD() {
 
 		for (i = 0; i < N; i++)	{
 			
-			sum += calculateDistance(i, j);
+			sum += pow(calculateDistance(i, j), 2);
 
 		}
+
 
 		sigma += sum;
 
@@ -71,17 +70,18 @@ double IFV_PFS() {
 
 		}
 
-		// printf("sigma_log_U: %lf\n", sigma_log_U);
-
 		P = ((log(C) / log(2.0)) - (1.0/N)*sigma_log_U);
 
 		sigma = 0.0;
 
 		for (k = 0; k < N; k++)	{
 			
-			sigma += pow(U[k][j], 2) * pow(P, 2);
+			sigma += pow(U[k][j], 2);
 
 		}
+
+		sigma = sigma * pow(P, 2);
+
 
 		result += sigma/N;
 
@@ -90,6 +90,7 @@ double IFV_PFS() {
 	result = result / (C);
 
 	result = result * (SDmax() / sigmaD());
+
 
 	return result;
 }

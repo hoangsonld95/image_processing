@@ -170,13 +170,11 @@ double SDmax() {
 				subtract_V += pow(V[j][k] - V[i][k], 2); 			
 			}
 
-			printf("%lf\n", subtract_V);
-
 			if(subtract_V >= max) max = subtract_V;
 		}
 	}
 
-	return max;
+	return sqrt(max);
 
 }
 
@@ -193,9 +191,10 @@ double sigmaD() {
 
 		for (i = 0; i < N; i++)	{
 			
-			sum += calculateDistance(i, j);
+			sum += pow(calculateDistance(i, j), 2);
 
 		}
+
 
 		sigma += sum;
 
@@ -226,17 +225,19 @@ double IFV_PFS() {
 
 		}
 
-		// printf("sigma_log_U: %lf\n", sigma_log_U);
-
 		P = ((log(C) / log(2.0)) - (1.0/N)*sigma_log_U);
 
 		sigma = 0.0;
 
 		for (k = 0; k < N; k++)	{
 			
-			sigma += pow(U[k][j], 2) * pow(P, 2);
+			sigma += pow(U[k][j], 2);
 
 		}
+
+		sigma = sigma * pow(P, 2);
+
+		printf("%lf\n", sigma);
 
 		result += sigma/N;
 
@@ -245,6 +246,8 @@ double IFV_PFS() {
 	result = result / (C);
 
 	result = result * (SDmax() / sigmaD());
+
+	printf("%lf\n", result);
 
 	return result;
 }
@@ -365,12 +368,46 @@ double DB_PFS() {
 
 }
 
-double SHE_PFS() {
+/*
+double updateV_optimize() {
 
+	int i,j,k;
+	double sum, Q;
 
-	
-	
+	for (j = 0; j < C; j++)	{
+
+		for (i = 0; i < D; i++)	{
+			
+			sum = 0.0;
+
+			for (k = 0; k < (N+P); k++)	{				
+				sum += pow((U[k][j]*(2 - W[k][j])), M);
+			}
+
+			Q = 0.0;
+
+			for (k = N; k < (N+P); k++)	{
+				
+				P = pow((U[k][j]*(2 - W[k][j])), M);
+				P = P * X[k][i];
+
+				Q += P; 
+
+			}
+
+			V[j][i] = V[j][i] + Q/sum;
+
+			printf("V[%d][%d]%lf\t", j,i,V[j][i]);
+
+		}
+
+		printf("\n");
+
+	}
+
 }
+*/
+
 
 
 
@@ -408,15 +445,24 @@ int main(int argc, char const *argv[])
 	M = 2.0;
 	alpha = 0.5;
 	
+	
 	updateV();
 	updateU();
 	updateT();
 	updateW();
 
+	/*
 	printf("SDmax: %lf\n", SDmax());
 	printf("SigmaD: %lf\n", sigmaD());
 	printf("IFV: %lf\n", IFV_PFS());
 	printf("DB: %lf\n", DB_PFS());
+	*/
+
+	printf("SDmax: %lf\n", SDmax());
+	printf("SigmaD: %lf\n", sigmaD());
+
+	IFV_PFS();
+
 
 	return 0;
 }
