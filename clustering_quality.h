@@ -112,15 +112,12 @@ double calculateDBS(int i, int mark[]) {
 
 	}
 
-	// printf("P: %d\n", points_in_cluster);
-
 	sum = 0.0;
 
 	for (k = 0; k < N; k++) {
 		
 		if(mark[k] == i) {
 
-			// printf("%lf\n", calculateDistance(k,i));
 
 			sum += pow(calculateDistance(k,i),2);
 

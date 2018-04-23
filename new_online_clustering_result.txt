@@ -1,380 +1,215 @@
-INPUT2.txt
-(N=214)
 -------------
 Batch: 0
-Execution time: 0.1346550000
+Execution time: 0.1358680000
 Iters: 31
 IFV: 0.311934653705430
 DB: 0.473752221051216
+Entropy: -266.966250
 -------------
 Batch: 1
-Execution time: 0.1025330000
+Execution time: 0.1036110000
 Iters: 23
 IFV: 0.296668968017749
 DB: 0.541440085930162
+Entropy: -272.531817
 -------------
 Batch: 2
-Execution time: 0.0836290000
+Execution time: 0.0825280000
 Iters: 18
 IFV: 0.280965908438915
 DB: 0.597380133133966
+Entropy: -278.029762
 -------------
 Batch: 3
-Execution time: 0.0688320000
+Execution time: 0.0709710000
 Iters: 15
 IFV: 0.262158565859685
 DB: 0.665384482007720
+Entropy: -283.414109
 -------------
 Batch: 4
-Execution time: 0.1446250000
+Execution time: 0.1404740000
 Iters: 25
 IFV: 0.257907546263378
 DB: 0.390269711849991
+Entropy: -291.034079
 -------------
 Batch: 5
-Execution time: 0.0571630000
+Execution time: 0.0662740000
 Iters: 11
 IFV: 0.255741074483961
 DB: 0.392283549461048
+Entropy: -296.834697
 -------------
 Batch: 6
-Execution time: 0.0614080000
+Execution time: 0.0600100000
 Iters: 11
 IFV: 0.253363847445853
 DB: 0.394538610768180
+Entropy: -302.626493
 -------------
 Batch: 7
-Execution time: 0.0554900000
+Execution time: 0.0598090000
 Iters: 11
 IFV: 0.251048550886435
 DB: 0.396970727841511
+Entropy: -308.429777
 -------------
 Batch: 8
-Execution time: 0.0638160000
+Execution time: 0.0642390000
 Iters: 11
 IFV: 0.248466952312067
 DB: 0.399397438289769
+Entropy: -314.221013
 -------------
 Batch: 9
-Execution time: 0.0582370000
+Execution time: 0.0670150000
 Iters: 11
 IFV: 0.246158463591419
 DB: 0.400805195209436
+Entropy: -320.025590
 
-
-INPUT3.txt
-(N = 1000)
+3.txt
 -------------
 Batch: 0
-Execution time: 0.0594670000
+Execution time: 0.0599540000
 Iters: 3
 IFV: 0.000318971039798
 DB: 5036.262196621551084
+Entropy: -1101.660021
 -------------
 Batch: 1
-Execution time: 0.0593270000
+Execution time: 0.0630800000
 Iters: 3
 IFV: 0.000382337788736
 DB: 5385.620471204482783
+Entropy: -1107.140871
 -------------
 Batch: 2
-Execution time: 0.0605540000
+Execution time: 0.0611250000
 Iters: 3
 IFV: 0.000187396661887
 DB: 8287.118772094814631
+Entropy: -1112.621849
 -------------
 Batch: 3
-Execution time: 0.0619960000
+Execution time: 0.0645410000
 Iters: 3
 IFV: 0.000264129258271
 DB: 5616.036198371089995
+Entropy: -1118.102728
 -------------
 Batch: 4
-Execution time: 0.0610410000
+Execution time: 0.0616270000
 Iters: 3
 IFV: 0.000330499149712
 DB: 5434.077458148941332
+Entropy: -1123.583916
 -------------
 Batch: 5
-Execution time: 0.0669430000
+Execution time: 0.0681440000
 Iters: 3
 IFV: 0.000270151831054
 DB: 7170.179764175071796
+Entropy: -1129.064429
 -------------
 Batch: 6
-Execution time: 0.0677810000
+Execution time: 0.0648730000
 Iters: 3
 IFV: 0.000221835842529
 DB: 8292.092813171348098
+Entropy: -1134.545858
 -------------
 Batch: 7
-Execution time: 0.0703700000
+Execution time: 0.0629880000
 Iters: 3
 IFV: 0.000193161850305
 DB: 7932.255827047131788
+Entropy: -1140.025654
 -------------
 Batch: 8
-Execution time: 0.0617950000
+Execution time: 0.0709150000
 Iters: 3
 IFV: 0.000210926327637
 DB: 9940.935575270657864
+Entropy: -1145.507184
 -------------
 Batch: 9
-Execution time: 0.0628780000
+Execution time: 0.0645600000
 Iters: 3
 IFV: 0.000210617179217
 DB: 6643.675157045551714
+Entropy: -1150.988154
 
+4.txt
 
-INPUT4.txt
-(N=2000)
 -------------
 Batch: 0
-Execution time: 0.1184370000
+Execution time: 0.1202350000
 Iters: 3
 IFV: 0.000173007487097
 DB: 11706.751357289500447
+Entropy: -2197.839280
 -------------
 Batch: 1
-Execution time: 0.1213890000
+Execution time: 0.1183150000
 Iters: 3
 IFV: 0.000188767669627
 DB: 11210.256076721849240
+Entropy: -2203.320130
 -------------
 Batch: 2
-Execution time: 0.1250910000
+Execution time: 0.1193030000
 Iters: 3
 IFV: 0.000091435081734
 DB: 16553.921965078570793
+Entropy: -2208.801109
 -------------
 Batch: 3
-Execution time: 0.1237570000
+Execution time: 0.1210360000
 Iters: 3
 IFV: 0.000130098145665
 DB: 11068.703075243376588
+Entropy: -2214.281988
 -------------
 Batch: 4
-Execution time: 0.1338990000
+Execution time: 0.1262280000
 Iters: 3
 IFV: 0.000158501922858
 DB: 10946.890685814621975
+Entropy: -2219.763175
 -------------
 Batch: 5
-Execution time: 0.1246720000
+Execution time: 0.1220570000
 Iters: 3
 IFV: 0.000136904193408
 DB: 14248.019294920990433
+Entropy: -2225.243689
 -------------
 Batch: 6
-Execution time: 0.1245650000
+Execution time: 0.1341700000
 Iters: 3
 IFV: 0.000107700676994
 DB: 16832.222836254259164
+Entropy: -2230.725119
 -------------
 Batch: 7
-Execution time: 0.1242620000
+Execution time: 0.1232870000
 Iters: 3
 IFV: 0.000095555652092
 DB: 15834.014465577969531
+Entropy: -2236.204915
 -------------
 Batch: 8
-Execution time: 0.1281800000
+Execution time: 0.1232640000
 Iters: 3
 IFV: 0.000107659233618
 DB: 19417.557865210099408
+Entropy: -2241.686446
 -------------
 Batch: 9
-Execution time: 0.1224820000
+Execution time: 0.1227040000
 Iters: 3
 IFV: 0.000106467551244
 DB: 13076.942281259836818
-
-INPUT6.txt
-(N=105)
-
--------------
-Batch: 0
-Execution time: 0.0150950000
-Iters: 4
-IFV: 0.002370102742297
-DB: 960.119892400854155
--------------
-Batch: 1
-Execution time: 0.0092190000
-Iters: 4
-IFV: 0.002590194410350
-DB: 1223.053650210072419
--------------
-Batch: 2
-Execution time: 0.0146410000
-Iters: 4
-IFV: 0.001240275405600
-DB: 1853.179905365975628
--------------
-Batch: 3
-Execution time: 0.0097030000
-Iters: 4
-IFV: 0.001561106548130
-DB: 1112.078425929343439
--------------
-Batch: 4
-Execution time: 0.0122750000
-Iters: 4
-IFV: 0.001718295721272
-DB: 1293.578384017135249
--------------
-Batch: 5
-Execution time: 0.0117870000
-Iters: 4
-IFV: 0.001225242521550
-DB: 1992.456232088590241
--------------
-Batch: 6
-Execution time: 0.0081280000
-Iters: 3
-IFV: 0.001814791215715
-DB: 1075.534309832360577
--------------
-Batch: 7
-Execution time: 0.0111960000
-Iters: 4
-IFV: 0.000891782234788
-DB: 2199.509793247454581
--------------
-Batch: 8
-Execution time: 0.0140320000
-Iters: 3
-IFV: 0.001788559984116
-DB: 1430.846166008682985
--------------
-Batch: 9
-Execution time: 0.0146600000
-Iters: 4
-IFV: 0.000813960451703
-DB: 1893.260486543707202
-
-INPUT5.txt
-(N=30000)
--------------
-Batch: 0
-Execution time: 3.3865230000
-Iters: 4
-IFV: 0.000087011218246
-DB: 12036.225345349408599
--------------
-Batch: 1
-Execution time: 2.7510600000
-Iters: 3
-IFV: 0.000013510254262
-DB: 104651.977182738279225
--------------
-Batch: 2
-Execution time: 2.6806310000
-Iters: 3
-IFV: 0.000006025370982
-DB: 227229.204905340709956
--------------
-Batch: 3
-Execution time: 2.4336730000
-Iters: 3
-IFV: 0.000008387973834
-DB: 165788.685679166490445
--------------
-Batch: 4
-Execution time: 2.9207690000
-Iters: 3
-IFV: 0.000010350751604
-DB: 164917.133780807955191
--------------
-Batch: 5
-Execution time: 2.6495870000
-Iters: 3
-IFV: 0.000009245800482
-DB: 213872.038120348734083
--------------
-Batch: 6
-Execution time: 2.6220300000
-Iters: 3
-IFV: 0.000007129012099
-DB: 247607.818865215434926
--------------
-Batch: 7
-Execution time: 2.7743530000
-Iters: 3
-IFV: 0.000006380993440
-DB: 234122.604808265343308
--------------
-Batch: 8
-Execution time: 2.6376490000
-Iters: 3
-IFV: 0.000007005885267
-DB: 283198.994858710095286
--------------
-Batch: 9
-Execution time: 2.9377500000
-Iters: 3
-IFV: 0.000007278728923
-DB: 195529.781519722280791
-
-INPUT8.txt
-(N = 105)
--------------
-Batch: 0
-Execution time: 0.0132390000
-Iters: 4
-IFV: 0.002536196352746
-DB: 718.095371444597504
--------------
-Batch: 1
-Execution time: 0.0101980000
-Iters: 4
-IFV: 0.002458822668251
-DB: 1213.344968260676978
--------------
-Batch: 2
-Execution time: 0.0154300000
-Iters: 4
-IFV: 0.001301965836309
-DB: 1436.492436995150229
--------------
-Batch: 3
-Execution time: 0.0113740000
-Iters: 4
-IFV: 0.001654326209947
-DB: 1143.726055242563007
--------------
-Batch: 4
-Execution time: 0.0107920000
-Iters: 4
-IFV: 0.001863464988530
-DB: 1283.004481579017693
--------------
-Batch: 5
-Execution time: 0.0167710000
-Iters: 4
-IFV: 0.001391516008477
-DB: 1919.276643248656228
--------------
-Batch: 6
-Execution time: 0.0112490000
-Iters: 3
-IFV: 0.001868164979678
-DB: 1040.060794300449970
--------------
-Batch: 7
-Execution time: 0.0111660000
-Iters: 4
-IFV: 0.000925815802991
-DB: 2203.037417562362862
--------------
-Batch: 8
-Execution time: 0.0124080000
-Iters: 3
-IFV: 0.001789550235732
-DB: 1386.967930085474791
--------------
-Batch: 9
-Execution time: 0.0204260000
-Iters: 4
-IFV: 0.000768125326802
-DB: 1891.412777384708988
+Entropy: -2247.167415

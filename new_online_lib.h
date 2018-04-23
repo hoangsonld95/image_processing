@@ -34,6 +34,48 @@ void initMemForV() {
 
 }
 
+double calculateEntropy() {
+
+	int i,j,k;
+	double entropy;
+
+	entropy = 0.0;
+
+	for (i = 0; i < (N+P); i++)	{
+		
+		for (j = 0; j < C; j++)	{
+			
+			entropy += T[i][j] * (log(T[i][j]) + W[i][j]);
+
+		}
+
+	}
+
+	return entropy;
+
+}
+
+double calculateEntropy_old() {
+
+	int i,j,k;
+	double entropy;
+
+	entropy = 0.0;
+
+	for (i = 0; i < N; i++)	{
+		
+		for (j = 0; j < C; j++)	{
+			
+			entropy += T[i][j] * (log(T[i][j]) + W[i][j]);
+
+		}
+
+	}
+
+	return entropy;
+
+}
+
 double PFS(int *iters) {
 
 	double diff, diffU, diffT, diffW;
@@ -42,7 +84,6 @@ double PFS(int *iters) {
 	time_t start, end;
 
 	start = clock();
-	
 
 	do {
 		updateV();
@@ -56,8 +97,6 @@ double PFS(int *iters) {
 
 	end = clock();
 
-	// printf("iterations: %d\n", iters);
-	// printf("ifv: %lf\n", IFV_PFS());
 	return ((double)(end - start)/CLOCKS_PER_SEC);
 }
 
@@ -66,7 +105,7 @@ double PFS_Optimize(int *iters) {
 
 	double diff, diffU, diffT, diffW;
 	maxIters = 1000;
-	double ifv;
+	double ifv, entropy;
 	time_t start, end;
 
 	start = clock();
@@ -75,34 +114,35 @@ double PFS_Optimize(int *iters) {
 	diffU = updateU();
 	diffT = updateT();
 	diffW = updateW();
-	printf("*********************\n");
-	printf("diffU: %10.15lf\n", diffU);
-	printf("diffT: %10.15lf\n", diffT);
-	printf("diffW: %10.15lf\n", diffW);
+	//printf("*********************\n");
+	//printf("diffU: %10.15lf\n", diffU);
+	//printf("diffT: %10.15lf\n", diffT);
+	//printf("diffW: %10.15lf\n", diffW);
+	entropy = calculateEntropy();
 	diff = diffU + diffT + diffW;
-	printf("*********************\n");
+	//printf("*********************\n");
 
 	(*iters)++;
 
-	N = N + P;
+	// N = N + P;
 
 	do {
-		// updateV();
+		updateV();
 		diffU = updateU();
 		diffT = updateT();
 		diffW = updateW();
-		printf("diffU: %10.15lf\n", diffU);
-		printf("diffT: %10.15lf\n", diffT);
-		printf("diffW: %10.15lf\n", diffW);
+
+		//printf("diffU: %10.15lf\n", diffU);
+		//printf("diffT: %10.15lf\n", diffT);
+		//printf("diffW: %10.15lf\n", diffW);
+
 		diff = diffU + diffT + diffW;
 		(*iters)++;
-		printf("\n");
+		//printf("\n");
 	
 	} while(!endLoop(iters, diff));
 
 	end = clock();
-
-	printf("/////////////////\n");
 
 	return ((double)(end-start)/CLOCKS_PER_SEC);
 

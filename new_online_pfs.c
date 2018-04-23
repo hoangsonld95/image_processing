@@ -148,7 +148,7 @@ int main(int argc, char const *argv[])
 	int batch;
 	int iters;
 
-	double ifv;
+	double ifv, entropy;
 	double db;
 	double silhouette;
 	double exec_time;
@@ -171,26 +171,26 @@ int main(int argc, char const *argv[])
 
 	PFS(&iters);
 	printf("IFV1: %lf\n", IFV_PFS());
-
-	sleep(5);
 	
 	
 	do {
 		iters = 0;
 		exec_time = 0;
-		sleep(5);
+		// sleep(5);
 		exec_time += feedData(f_batch);
 		exec_time = initMembership();
 		N = N + P;
 		exec_time += PFS(&iters);
 		ifv = IFV_PFS();
 		db = DB_PFS();
+		entropy = calculateEntropy_old();
 		// silhouette = SHE_PFS();
 
 		printf("iters: %d\n", iters);
 		printf("ifv: %lf\n", ifv);
+		printf("entropy: %lf\n", entropy);
 		// printf("db: %lf\n", db);
-		output(fileOutput, batch, exec_time, iters, ifv, db);
+		output(fileOutput, batch, exec_time, iters, ifv, db, entropy);
 		batch++;
 	}while(!feof(f_batch));
 	

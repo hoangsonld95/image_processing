@@ -158,7 +158,7 @@ void input(char fileName[]) {
 
 }
 
-void output(char fileOutput[], int batch, double exec_time, int iters, double ifv, double db) {
+void output(char fileOutput[], int batch, double exec_time, int iters, double ifv, double db, double entropy) {
 
 	FILE *f_output;
 
@@ -172,6 +172,7 @@ void output(char fileOutput[], int batch, double exec_time, int iters, double if
 	fprintf(f_output, "Iters: %d\n", iters);
 	fprintf(f_output, "IFV: %.15lf\n", ifv);
 	fprintf(f_output, "DB: %.15lf\n", db);
+	fprintf(f_output, "Entropy: %lf\n", entropy);
 
 	fclose(f_output);
 
